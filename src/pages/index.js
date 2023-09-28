@@ -1,8 +1,9 @@
 import React, {useState} from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Form, Offcanvas } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import SettingsButton from "../components/settings-button";
+import CloseButton from "../components/close-button";
 import ResponsiveSize from "../hooks/responsive-size";
 import ResponsiveHeader from "../components/responsive-header";
 import { textVide } from 'text-vide';
@@ -18,17 +19,17 @@ function SettingsWindow(props) {
   return(
     <>
     <SettingsButton fontButtonSize={ResponsiveSize(0.8, "rem", 0.001, 500)} handleShow={handleShow} />
-    <Offcanvas show={show} onHide={handleClose} placement="bottom" scroll={true}>
-        <Offcanvas.Header className="justify-content-center">
-          <Offcanvas.Title style={{color: "#017BFF"}}>
+    <Modal show={show} onHide={handleClose} fullscreen={true} scrollable={true}>
+        <Modal.Header className="justify-content-center">
+          <Modal.Title style={{color: "#017BFF"}}>
             <ResponsiveHeader level={1} maxSize={2} minScreenSize={500}>Settings</ResponsiveHeader>
-          </Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
           <section className="mb-3">
             <div className='align-items-center' style={{textAlign: 'center', color: "#017BFF"}}>
               <ResponsiveHeader level={2} maxSize={1.5} minScreenSize={500}>
-                Language
+                Language and Dialogue
               </ResponsiveHeader>
             </div>
             <Form.Select style={{color: "#017BFF"}} className="hover-shadow" id="language-selector" onChange={props.changeLanguage} value={props.state.currentLanguage}>
@@ -59,10 +60,13 @@ function SettingsWindow(props) {
           <div className='align-items-center pb-3' style={{textAlign: 'center', color: "#017BFF"}}>
             <ResponsiveHeader level={2} maxSize={1.5} minScreenSize={500}>{`Bionic Reading Level`}</ResponsiveHeader>
           </div>
-          <RangeSlider className="hover-shadow mt-3" variant="dark" tooltipPlacement='top' tooltip='on' onChange={changeEvent => props.changeBionicReadingFixation(changeEvent.target.value)} min={0} max={3} value={props.state.currentBionicReadingFixationIndex} />
+          <RangeSlider className="hover-shadow mt-3" variant="dark" tooltipPlacement='top' tooltip='on' onChange={changeEvent => props.changeBionicReadingFixation(changeEvent.target.value)} min={0} max={5} value={props.state.currentBionicReadingFixationIndex} />
         </section>
-        </Offcanvas.Body>
-      </Offcanvas>
+        </Modal.Body>
+        <Modal.Footer className="justify-content-center">
+          <CloseButton handleClose={handleClose} />
+        </Modal.Footer>
+      </Modal>
     </>
   )
 }
@@ -93,6 +97,7 @@ export default class WordpressBlogv2022_3 extends React.Component {
   }
   
   changeBionicReadingFixation = (bionicReadingFixationRaw) => {
+    /*
     switch(parseInt(bionicReadingFixationRaw)) {
       case 1:
         this.setState({currentBionicReadingFixation: 5});
@@ -106,7 +111,8 @@ export default class WordpressBlogv2022_3 extends React.Component {
       default:
         this.setState({currentBionicReadingFixation: 0});
     }
-
+    */
+    this.setState({currentBionicReadingFixation: parseInt(bionicReadingFixationRaw)})
     this.setState({currentBionicReadingFixationIndex: parseInt(bionicReadingFixationRaw)});
   }
 
@@ -182,17 +188,19 @@ export default class WordpressBlogv2022_3 extends React.Component {
         if(nextTextID < subTexts.length && parseInt(subTexts[nextTextID].name) === sectionNum) {
           var currentTextHTML = subTexts[nextTextID].childMarkdownRemark.html;
           if(this.state.currentBionicReadingFixation > 0) {
-            if(metadataItems.childMarkdownRemark.frontmatter.version === 4) {
-              currentTextHTML = textVide(currentTextHTML, { fixationPoint: this.state.currentBionicReadingFixation });
-            }
+            //if(metadataItems.childMarkdownRemark.frontmatter.version === 4) {
+              currentTextHTML = textVide(currentTextHTML, { sep: ['<span class="fixation-reading">', '</span>'], fixationPoint: this.state.currentBionicReadingFixation });
+            //}
+            /*
             else {
               const anchorStartTagRegex = /<a.*">/gi
               const anchorEndTagRegex = /<\/a>/gi
               console.log(currentTextHTML)
               currentTextHTML = currentTextHTML.replace(anchorStartTagRegex, "")
               currentTextHTML = currentTextHTML.replace(anchorEndTagRegex, "")
-              currentTextHTML = textVide(currentTextHTML, { sep: ['<span style="color: #A35BFF">', '</span>'], fixationPoint: (![2, 3].includes(this.state.currentBionicReadingFixation)) ? this.state.currentBionicReadingFixation : 1 });
+              currentTextHTML = textVide(currentTextHTML, { sep: ['<span class="fixation-reading">', '</span>'], fixationPoint: (![2, 3].includes(this.state.currentBionicReadingFixation)) ? this.state.currentBionicReadingFixation : 1 });
             }
+            */
           }
           currentText = (<section className="my-2" dangerouslySetInnerHTML={{ __html: currentTextHTML }}></section>);
           nextTextID++;

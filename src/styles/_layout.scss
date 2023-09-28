@@ -88,8 +88,8 @@ article a:hover {
 body {
   font-family: "Futura", "Segoe UI", Arial, Helvetica, sans-serif;
   color: #fff;
-  background-image: url("../images/Zene\ N\ Zeanne\ Background.png");
-  background-size: cover;
+  background-image: url("../images/WoodFloorBackground.png");
+  background-size: 20%;
 }
 
 main, .modal {
@@ -369,4 +369,11 @@ ul.bullet-points li {
 
 .offcanvas-backdrop {
   background-color: rgba(0, 0, 0, 0);
+}
+
+.fixation-reading {
+  background: rgba(0, 205, 0, 0.5);
+  border-left: 5px solid rgba(0, 139, 0, 0.7);
+  box-shadow: none;
+  border-radius: 0px;
 }

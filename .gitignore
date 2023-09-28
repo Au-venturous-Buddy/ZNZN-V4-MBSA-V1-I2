@@ -3,5 +3,6 @@ node_modules
 .cache
 public/favicon.ico
 public
+dist
 src/.DS_Store
 android
