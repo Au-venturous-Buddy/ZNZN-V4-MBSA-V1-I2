@@ -1,5 +1,5 @@
 ---
 image_alt: [
-    "Zene as drawn by himself and his twin sister Zeanne"
+    "Zene and Jake taking part in a mock election to determine who gets the plus points in seatwork"
 ]
 ---

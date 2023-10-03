@@ -1,10 +1,10 @@
 {
-  "name": "znzn-mbsa-v0-i0",
-  "author": "Au-mazin' Creatives <ezekiel.lagmay@yahoo.com>",
+  "name": "znzn-mbsa-v1-i2",
+  "author": "Au-venturous Buddy <auventurous.buddy@gmail.com>",
   "main": "main.js",
   "build": {
     "icon": "src/images/Au-Some Blogs.png",
-    "productName": "Zene 'N Zeanne Au-Some Blogs Offline Template",
+    "productName": "Zene 'N Zeanne Au-Some Blogs: The 'Au-Some' Ice Breaker",
     "files": [
       "public/**/*",
       "main.js"
@@ -46,8 +46,8 @@
     }
   },
   "private": true,
-  "description": "A Sample Offline Template for Zene 'N Zeanne: Au-Some Blogs",
-  "version": "0.0.0",
+  "description": "Zeanne and Nikki help Zene and Jake prepare for an Ice Breaker for their Araling Panlipunan (History) class.",
+  "version": "1.2.0",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",

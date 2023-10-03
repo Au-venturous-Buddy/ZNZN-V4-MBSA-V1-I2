@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.i0.v0.mbsa.znzn',
-  appName: "Zene 'N Zeanne Au-Some Blogs Offline Template",
+  appId: 'com.i2.v1.mbsa.znzn',
+  appName: "Zene 'N Zeanne Au-Some Blogs: The \"Au-Some\" Ice Breaker",
   webDir: 'public',
   bundledWebRuntime: false
 };
