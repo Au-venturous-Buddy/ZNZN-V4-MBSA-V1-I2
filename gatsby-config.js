@@ -9,6 +9,7 @@ module.exports = {
     title: "Zene 'N Zeanne Au-Some Blogs: The Au-Some Ice Breaker",
     author: "Au-venturous Buddy"
   },
+  pathPrefix: "/ZNZN-V4-MBSA-V1-I1",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
