@@ -6,10 +6,10 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Zene 'N Zeanne Au-Some Blogs: The Au-Some Ice Breaker",
+    title: "Zene 'N Zeanne Au-Some Blogs: The \"Au-Some\" Ice Breaker",
     author: "Au-venturous Buddy"
   },
-  pathPrefix: "/ZNZN-V4-MBSA-V1-I1",
+  pathPrefix: "/ZNZN-V4-MBSA-V1-I2",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Zene 'N Zeanne Au-Some Blogs: The Au-Some Ice Breaker`,
-        short_name: `ZNZN-MBSA-V1-I2`,
+        name: `Zene 'N Zeanne Au-Some Blogs: The \"Au-Some\" Ice Breaker`,
+        short_name: `ZNZN-V4-MBSA-V1-I2`,
         start_url: `/`,
         background_color: `#017BFF`,
         theme_color: `#017BFF`,
