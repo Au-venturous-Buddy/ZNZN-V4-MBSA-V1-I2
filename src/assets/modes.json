@@ -1,0 +1,7 @@
+{
+    "Original": ["0", "1-Original", "2-Original", "3"],
+    "Better than PCOS?": ["0", "1-Original", "2-Online", "3"],
+    "Limited Face-to-Face": ["0", "1-Limited Face-to-Face", "2-Limited Face-to-Face", "3"],
+    "Limited Face-to-Face + Better than PCOS?": ["0", "1-Limited Face-to-Face", "2-Online", "3"],
+    "Online/Zoom": ["0", "1-Online", "2-Online", "3"]
+}
