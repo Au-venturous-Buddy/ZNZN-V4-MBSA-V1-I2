@@ -240,8 +240,6 @@ function SettingsWindow(props) {
         beforeChange: (current, next) => this.setState({ slideIndex: next })
       };
 
-      console.log(this.props.modeOptions)
-
       return(
         <Layout menuBarItems={(this.state.currentOrientation ? [(<CaptionSlideshowToggle state={this.state} goToPage={this.goToPage}>{contents.sections}</CaptionSlideshowToggle>)] : []).concat([(<SettingsWindow state={this.state} version={contents.metadataItems.childMarkdownRemark.frontmatter.version} languageOptions={contents.languageOptions} modeOptions={this.props.modeOptions} changeLanguage={this.changeLanguage} changeMode={this.changeMode} changeTableBackground={this.changeTableBackground} changeBionicReadingFixation={this.changeBionicReadingFixation} changeOrientation={this.changeOrientation} />)])} showMenuBar={true}>
         <div style={this.props.tableBackgrounds[this.state.currentTableBackground]}>
