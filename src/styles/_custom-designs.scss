@@ -1,34 +1,23 @@
-.wordpress,
-.wordpress-v2022_2,
-.wordpress-v2022_3,
-.miscellaneous-page {
+.ausome-blogs,
+.ausome-blogs-v2 {
   font-family: "Chalkduster", "Futura", "Segoe UI", Arial, Helvetica, sans-serif;
-  color: $primaryColor;
-  background-color: white;
-  background-image: url("../images/Au-Some Blogs Background.png");
+  color: #00f;
+  background-color: rgb(255, 234, 183);
+  background-image: url("../images/Au-Some\ Blogs\ Background.png");
   background-size: 90%;
   background-position: center;
   border-left: 20px dotted gray;
   margin: 5%;
   box-shadow: $shadowCenter;
 
-  a,
-  a:visited,
-  a:hover {
-    color: $primaryColor;
+  .ext-web-link,
+  .ext-web-link:visited {
+    color: #00f;
   }
 
-  a:hover {
-    background: rgba(255, 255, 0, 0.5);
-    box-shadow: none;
-    border-radius: 0px;
-    padding: 0px;
+  .ext-web-link:hover {
+    color: #fff;
   }
-}
-
-.miscellaneous-page {
-  font-family: "Futura", "Segoe UI", Arial, Helvetica, sans-serif;
-  border-left: 7px dashed black;
 }
 
 .table-background,
@@ -54,13 +43,13 @@
 }
 
 .comic-strip-page-thumbnail .comic-strip-page-number {
-  color: $primaryColor;
+  color: #00f;
 }
 
 .comic-strip-page-thumbnail-current .comic-strip-page-number,
 .comic-strip-page-thumbnail:hover .comic-strip-page-number,
 .comic-strip-page-thumbnail:focus .comic-strip-page-number {
-  color: $primaryColor;
+  color: #00f;
   background: rgba(0, 205, 0, 0.5);
   border-left: 5px solid rgba(0, 139, 0, 0.7);
   border-right: 5px solid rgba(0, 139, 0, 0.7);
